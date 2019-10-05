@@ -1,0 +1,33 @@
+button {
+	font-family: 'Merriweather', serif;
+	border: none;
+	outline: none;
+}
+
+.button {
+    padding: 0.3rem .9rem;
+    background: red;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    transition: all .1s ease-in-out;
+    line-height: 24px;
+
+    &:hover {
+      background: darken(red, 5);
+    }
+
+    &:disabled {
+      background: green;
+      cursor: no-drop;
+    }
+
+    &.disabled {
+      background: green;
+      cursor: no-drop;
+    }
+}
