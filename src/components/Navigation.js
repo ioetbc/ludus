@@ -12,8 +12,8 @@ class Navigation extends Component {
                     style={{ right: contactScreen ? '50vw' : '0vw' }}
                 >
                     <div className="nav-top">
-                        <p>A group of creatives that develop brands using design, animation and videography.</p>
-                        <p onClick={handleContact} style={{ cursor: 'pointer' }}>Contact</p>
+                        <p>Creatives that develop brands across design, animation and videography.</p>
+                        <p className="contact" onClick={handleContact}>Contact</p>
                     </div>
                 <div className="nav-bottom">
                     <img style={{ width: '150px' }} src={Logo} alt="ludus logo" />

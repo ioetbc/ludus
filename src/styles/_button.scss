@@ -1,7 +1,7 @@
 button {
-	font-family: 'Merriweather', serif;
 	border: none;
-	outline: none;
+  outline: none;
+	font-family: helvetica, sans-serif;  
 }
 
 .button {
@@ -11,7 +11,6 @@ button {
     color: white;
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
     font-weight: bold;
     transition: all .1s ease;
     line-height: 24px;
