@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.scss';
 import Contact from './components/Contact';
-import Logo from './images/logo/logo-white.svg';
+import Navigation from './components/Navigation';
 
 class App extends Component {
 	constructor(props) {	
@@ -28,18 +28,10 @@ class App extends Component {
 					</iframe>
 					<script src="https://player.vimeo.com/api/player.js"></script> */}
 				</main>
-
-				<nav style={{ right: contactScreen ? '50vw' : '0vw', transition: 'right .5s ease-in-out' }}>
-					<div className="nav-top">
-						<p>A group of creatives that develop brands using design, animation and videography.</p>
-						<p onClick={this.handleContact} style={{ cursor: 'pointer' }}>Contact</p>
-					</div>
-					<div className="nav-bottom">
-						<img style={{ width: '150px' }} src={Logo} alt="ludus logo" />
-						<p>Website in development</p>
-					</div>
-				</nav>
-
+				<Navigation
+					handleContact={this.handleContact}
+					contactScreen={this.state.contactScreen}
+				/>
 			</div>
 		);
 	}
