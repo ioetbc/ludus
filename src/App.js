@@ -24,9 +24,19 @@ class App extends Component {
 					contactScreen={this.state.contactScreen}
 				/>
 				<main className="video" onClick={contactScreen && this.handleContact}>
-					{/* <iframe src="https://player.vimeo.com/video/361729778?autoplay=1&loop=1&color=e9edef&badge=0" style={{ width: '100%', height: '100vh', pointerEvents: 'none' }} frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-					</iframe>
-					<script src="https://player.vimeo.com/api/player.js"></script> */}
+
+				<div class="video-container" >
+					<div class="video-foreground">
+						<iframe
+							width="100%"
+							height="100%"
+							src="https://www.youtube.com/embed/tBUtXF5tOwg?autoplay=1"
+							frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+							allow="autoplay"
+						></iframe>
+					</div>
+				</div>
 				</main>
 				<Navigation
 					handleContact={this.handleContact}
