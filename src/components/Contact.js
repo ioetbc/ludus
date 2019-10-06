@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
-import { generic, email, phone, message } from '../schema/ContactFormSchema';
+import { generic, email, message, genericNotRequired } from '../schema/ContactFormSchema';
 import Close from '../images/icon/icon-close.svg';
 
 class PayForm extends Component {
@@ -8,9 +9,8 @@ class PayForm extends Component {
         super(props);
         this.state = {
             firstName: '',
-            lastName: '',
+            businessName: '',
             email: '',
-            phoneNumber: '',
             message: '',
         }
 
@@ -28,11 +28,11 @@ class PayForm extends Component {
                     this.setState({ firstName: e.target.value, firstNameError: false });
                 }
             break;
-            case 'lastName':
-                if (generic.validate({ generic: e.target.value }).error) {
-                    this.setState({ lastNameError: 'Whoops, please check your answer to continue.' })
+            case 'businessName':
+                if (genericNotRequired.validate({ genericNotRequired: e.target.value }).error) {
+                    this.setState({ businessNameError: 'Whoops, please check your answer to continue.' })
                 } else {
-                    this.setState({ lastName: e.target.value, lastNameError: false });
+                    this.setState({ businessName: e.target.value, businessNameError: false });
                 }
             break;
             case 'email':
@@ -42,15 +42,8 @@ class PayForm extends Component {
                     this.setState({ email: e.target.value, emailError: false });
                 }
             break;
-            case 'phone':
-                if (phone.validate({ phone: e.target.value }).error) {
-                    this.setState({ phoneError: 'Whoops, please check your answer to continue.' })
-                } else {
-                    this.setState({ phone: e.target.value, phoneError: false });
-                }
-            break;
             case 'message':
-                if (generic.validate({ message: e.target.value }).error) {
+                if (message.validate({ message: e.target.value }).error) {
                     this.setState({ messageError: 'Whoops, please check your answer to continue.' })
                 } else {
                     this.setState({ message: e.target.value, messageError: false });
@@ -59,12 +52,35 @@ class PayForm extends Component {
         }
     };
 
+    handleSubmit() {
+        axios({
+            method: 'post',
+            url: process.env.REACT_APP_CONTACT_ENDPOINT,
+            config: {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            },
+            data: {
+                firstName: this.state.firstName,
+                businessName: this.state.businessName,
+                email: this.state.email,
+                message: this.state.message,
+            }
+        })
+        .then(function (response) {
+            console.log('response', response);
+        })
+        .catch(function (error) {
+            console.log('error', error);
+        });
+    }
+
     render() {
         const {
             firstNameError,
-            lastNameError,
+            businessNameError,
             emailError,
-            phoneError,
             messageError,
         } = this.state;
 
@@ -72,9 +88,8 @@ class PayForm extends Component {
         let allValid = false;
         if (
             firstNameError === false &&
-            lastNameError === false &&
+            businessNameError === false &&
             emailError === false &&
-            phoneError === false &&
             messageError === false &&
             !hasErrors
         ) {
@@ -82,6 +97,9 @@ class PayForm extends Component {
         }
 
         const disableButton = allValid;
+
+        console.log('lads',  process.env.REACT_APP_CONTACT_ENDPOINT);
+
 
         return (
             <div className={`contact-screen ${this.props.contactScreen && 'show-contact'}`}>
@@ -120,15 +138,15 @@ class PayForm extends Component {
                             <div className='text-field'>
                                 <input
                                     className='text-field--input'
-                                    name="bussiness"
-                                    id="bussiness"
+                                    name="businessName"
+                                    id="businessName"
                                     placeholder=' '
                                     type='text'
                                     onBlur={(e) => this.handleInput(e)}
                                 />
-                                <label className='text-field--label' for='bussiness'>Business name</label>
+                                <label className='text-field--label' for='businessName'>Business name</label>
                             </div>
-                            {lastNameError && <p className="error-message">{lastNameError}</p>}
+                            {businessNameError && <p className="error-message">{businessNameError}</p>}
                         </div>
                         <div className='text-field--container'>
                             <div className='text-field'>
@@ -157,7 +175,7 @@ class PayForm extends Component {
                                     />
                                     <label className='text-field--label' for='message'>Tell us what you need</label>
                                 </div>
-                                {phoneError && <p className="error-message">{phoneError}</p>}
+                                {messageError && <p className="error-message">{messageError}</p>}
                             </div>
 
                         <button
@@ -165,7 +183,7 @@ class PayForm extends Component {
                             className={`button ${!disableButton && 'disabled'}`}
                             id='submitButton'
                         >
-                            pay now
+                            send
                         </button>
                     </form>
                 </div>
