@@ -9,10 +9,21 @@ $text-field-width: 300px;
   float: right;
   background: white;
   height: 100vh;
-  width: 50vw;
-  padding: 50px;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 1; 
+  width: 0vw;
+  transition: all .5s ease;
+  margin-right: -100px;
+  padding: 50px;  
+
+  &.show-contact {
+    width: 100vw;
+    margin-right: 0;
+
+    @media screen and (min-width: 768px) {
+      width: 50vw;
+    }
+  }
 
   form {
     margin-top: 50px;

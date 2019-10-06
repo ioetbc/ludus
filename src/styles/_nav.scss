@@ -11,6 +11,7 @@ nav {
             padding: 50px;
             box-sizing: border-box;
             z-index: 0;
+            transition: all .5s ease;
         }
 
         .nav-top {
@@ -46,7 +47,6 @@ nav {
             justify-content: space-between;
             padding: 0 40px;
             transition: all .5s ease;
-
         }
 
         @media screen and (min-width: 768px) {

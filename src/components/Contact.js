@@ -84,13 +84,15 @@ class PayForm extends Component {
         const disableButton = allValid;
 
         return (
-            <div className="contact-screen" style={{ right: this.props.contactScreen ? '0px' : '-50vw', transition: 'right .5s ease-in-out' }}>
+            <div className={`contact-screen ${this.props.contactScreen && 'show-contact'}`}>
+            {this.props.contactScreen &&
                 <img
                     onClick={this.props.handleContact}
                     style={{ width: '30px', float: 'right', cursor: 'pointer' }}
                     src={Close}
                     alt="close"
                 />
+            }
                 <div style={{ maxWidth: '440px' }}>
                     <h3 style={{ marginTop: '0px' }}>Want to get started on a new project?</h3> 
                     <p>Get in touch</p>
