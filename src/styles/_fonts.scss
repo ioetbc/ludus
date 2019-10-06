@@ -1,18 +1,15 @@
 p  {
 	margin: 0;
-	color: white;
 }
 
-
-
-
-
-
-
-
+nav {
+	p {
+		color: white;
+	}
+}
 
 .error-message {
-	color: red;
+	color: black;
     font-size: 0.6rem;
 	margin-top: 9px;
 	line-height: 14px;

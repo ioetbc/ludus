@@ -1,84 +1,102 @@
-$color-accent: red;
+$color-accent: black;
 $color-input-background: white;
 
 $text-field-height: 40px;
 $text-field-width: 300px;
 
-.text-field--container {
-  margin-bottom: 24px;
-}
-
-.input-side-by-side {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
-}
-
-.text-field {
-  background-color: $color-input-background;
-  border-radius: 4px;
-  cursor: text;
-  height: $text-field-height;
-  overflow: hidden;
+.contact-screen {
   position: relative;
-  transition: background 166ms ease-in-out;
-  user-select: none;
-  width: 100%;
-  border: 1px red solid;
+  float: right;
+  background: white;
+  height: 100vh;
+  width: 50vw;
+  padding: 50px;
+  box-sizing: border-box;
+  z-index: 1;
 
-  .text-field--input,
-  .text-field--label {
-    font-size: 14px;
-    height: 100%;
-    line-height: $text-field-height;
-    position: absolute;
-    width: calc(100% - 24px);
-    text-transform: capitalize;
-
-    &:hover {
-      background: darken($color-input-background, 3%);
-    }
+  form {
+    margin-top: 50px;
   }
 
-  .text-field--input {
-    appearance: none;
-    background: transparent;
-    border: none;
-    color: black;
-    padding: 6px 12px;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:focus + .text-field--label,
-    &:not(:placeholder-shown) + .text-field--label {
-      transform: scale(0.75) translateY(-5px);
-    }
+  .text-field--container {
+    margin-bottom: 24px;
   }
 
-  .text-field--label {
-    color: black;
-    margin: 0 12px;
-    pointer-events: none;
-    transform-origin: 0 0;
-    transition: transform 166ms ease-in-out;
+  .input-side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
   }
 
-  .text-field--line,
-  .text-field--line--color {
-    bottom: 0;
-    left: 0;
-    position: absolute;
+  .text-field {
+    background-color: $color-input-background;
+    cursor: text;
+    height: $text-field-height;
+    overflow: hidden;
+    position: relative;
+    transition: background 166ms ease-in-out;
+    user-select: none;
     width: 100%;
-  }
+    border: 1px black solid;
 
-  .text-field--input:focus ~ .text-field--label {
-    color: $color-accent;
-  }
+    &.large {
+      height: 150px;
+    }
 
-  .text-field--input:focus ~ .text-field--line--color {
-    transform: scaleX(1);
+    .text-field--input,
+    .text-field--label {
+      font-size: 14px;
+      height: 100%;
+      line-height: $text-field-height;
+      position: absolute;
+      width: calc(100% - 24px);
+      text-transform: capitalize;
+
+      &:hover {
+        background: darken($color-input-background, 3%);
+      }
+    }
+
+    .text-field--input {
+      appearance: none;
+      background: transparent;
+      border: none;
+      color: black;
+      padding: 6px 12px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus + .text-field--label,
+      &:not(:placeholder-shown) + .text-field--label {
+        transform: scale(0.75) translateY(-5px);
+      }
+    }
+
+    .text-field--label {
+      color: black;
+      margin: 0 12px;
+      pointer-events: none; 
+      transform-origin: 0 0;
+      transition: transform 166ms ease-in-out;
+    }
+
+    .text-field--line,
+    .text-field--line--color {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .text-field--input:focus ~ .text-field--label {
+      color: $color-accent;
+    }
+
+    .text-field--input:focus ~ .text-field--line--color {
+      transform: scaleX(1);
+    }
   }
 }
 

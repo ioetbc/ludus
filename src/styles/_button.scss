@@ -6,8 +6,7 @@ button {
 
 .button {
     padding: 0.3rem .9rem;
-    background: red;
-    border-radius: 4px;
+    background: black;
     cursor: pointer;
     color: white;
     font-size: 0.7rem;
@@ -16,18 +15,15 @@ button {
     font-weight: bold;
     transition: all .1s ease-in-out;
     line-height: 24px;
+    min-width: 170px;
+    text-align: left;
 
     &:hover {
-      background: darken(red, 5);
+      background: darken(black, 5);
     }
 
     &:disabled {
-      background: green;
-      cursor: no-drop;
-    }
-
-    &.disabled {
-      background: green;
+      background: black;
       cursor: no-drop;
     }
 }

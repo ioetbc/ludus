@@ -5,6 +5,7 @@ nav {
     top: 0;
     padding: 50px;
     box-sizing: border-box;
+    z-index: 0;
     .nav-top {
         display: flex;
         justify-content: space-between;
@@ -14,5 +15,12 @@ nav {
         justify-content: space-between;
         top: 100%;
         position: sticky;
+
+        p {
+            transform: rotate(90deg);
+            transform-origin: right;
+            font-style: italic;
+            margin-top: 10px;
+        }
     }
 }
