@@ -23,20 +23,14 @@ class App extends Component {
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
 				/>
-				<main className="video" onClick={contactScreen && this.handleContact}>
-
-				<div class="video-container" >
-					<div class="video-foreground">
-						<iframe
-							width="100%"
-							height="100%"
-							src="https://www.youtube.com/embed/tBUtXF5tOwg?autoplay=1"
-							frameborder="0"
-							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-							allow="autoplay"
-						></iframe>
+				<main
+					onClick={contactScreen && this.handleContact}
+					className={`video ${this.state.contactScreen && 'show-contact'}`}
+				>
+					<div class="video-container" >
+						<div class="video-foreground">
+						</div>
 					</div>
-				</div>
 				</main>
 				<Navigation
 					handleContact={this.handleContact}

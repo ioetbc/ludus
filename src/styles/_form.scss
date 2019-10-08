@@ -11,17 +11,15 @@ $text-field-width: 300px;
   height: 100vh;
   box-sizing: border-box;
   z-index: 1; 
-  width: 0vw;
+  width: 50vw;
   transition: all .5s ease;
-  margin-right: -100px;
-  padding: 50px;  
+  padding: 38px 47px;
+  right: -50vw;
 
   &.show-contact {
-    width: 100vw;
-    margin-right: 0;
 
     @media screen and (min-width: 768px) {
-      width: 50vw;
+      right: 0vw;
     }
   }
 
@@ -49,6 +47,7 @@ $text-field-width: 300px;
     user-select: none;
     width: 100%;
     border: 1px black solid;
+    // padding-top: 12px;
 
     &.large {
       height: 150px;
@@ -61,7 +60,8 @@ $text-field-width: 300px;
       line-height: $text-field-height;
       position: absolute;
       width: calc(100% - 24px);
-      text-transform: capitalize;
+      line-height: 15px;
+      padding-top: 8px;
 
       &:hover {
         background: darken($color-input-background, 3%);
@@ -74,6 +74,7 @@ $text-field-width: 300px;
       border: none;
       color: black;
       padding: 6px 12px;
+      font-size: 12px;
 
       &:focus {
         outline: none;
@@ -91,6 +92,11 @@ $text-field-width: 300px;
       pointer-events: none; 
       transform-origin: 0 0;
       transition: transform 166ms ease-in-out;
+      margin-top: 3px;
+    }
+
+    #message {
+      padding-top: 22px;
     }
 
     .text-field--line,

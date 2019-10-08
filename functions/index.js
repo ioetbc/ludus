@@ -42,7 +42,7 @@ exports.contact = functions.https.onRequest(async (req, res) => {
             // if (validationError) throw new Error(`form validation error: ${validationError}`);
             console.log('req.body', req.body);
             const roboRobEmail = {
-                to: 'ioetbc@gmail.com',
+                to: 'enquires@ludusdesign.co.uk',
                 from: {
                     email: 'hello@ludus.com',
                     name: 'robo rob email',
