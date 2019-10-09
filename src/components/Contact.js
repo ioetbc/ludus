@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { generic, email, message, genericNotRequired } from '../schema/ContactFormSchema';
 import Close from '../images/icon/icon-close.svg';
+import LogoMob from '../images/logo/logo-black-mob.png';
 
 class PayForm extends Component {
     constructor(props) {
@@ -107,8 +108,12 @@ class PayForm extends Component {
                     alt="close"
                 />
                 <div style={{ maxWidth: '440px' }}>
-                    <h3 style={{ marginTop: '0px' }}><span style={{ fontWeight: 'bolder' }}>Want to get</span> started on a new project?</h3> 
-                    <p>Get in touch</p>
+                    <h3 className="hide-mobile" style={{ marginTop: '0px' }}><span style={{ fontWeight: 'bolder' }}>Want to get</span> started on a new project?</h3> 
+                    <p className="hide-mobile">Get in touch</p>
+
+                    <img className="contact-logo" src={LogoMob} alt="logo" />
+
+
                     <form onSubmit={(e) => {
                         e.preventDefault()
                         this.handleSubmit(e, allValid)

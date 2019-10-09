@@ -11,16 +11,38 @@ $text-field-width: 300px;
   height: 100vh;
   box-sizing: border-box;
   z-index: 1; 
-  width: 50vw;
+  width: 100vw;
   transition: all .5s ease;
   padding: 38px 47px;
-  right: -50vw;
+  right: -100vw;
+  overflow-y: auto;
+
+  @media screen and (min-width: 768px) { 
+    width: 50vw;
+    right: -50vw;
+  }
 
   &.show-contact {
-
+    right: 0vw;
     @media screen and (min-width: 768px) {
       right: 0vw;
     }
+  }
+
+  .hide-mobile {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    } 
+  }
+
+  .contact-logo {
+    width: 35px;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    } 
   }
 
   form {

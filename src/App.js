@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.scss';
+import Video from './components/Video';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 
@@ -16,22 +17,18 @@ class App extends Component {
 	}
 
 	render() {
-		const { contactScreen } = this.state;
 		return (
 			<div className="App">
 				<Contact
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
 				/>
-				<main
-					onClick={contactScreen && this.handleContact}
-					className={`video ${this.state.contactScreen && 'show-contact'}`}
-				>
-					<div class="video-container" >
-						<div class="video-foreground">
-						</div>
-					</div>
-				</main>
+
+				<Video
+					handleContact={this.handleContact}
+					contactScreen={this.state.contactScreen}
+				/>
+
 				<Navigation
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
@@ -40,5 +37,7 @@ class App extends Component {
 		);
 	}
 }
+
+
 
 export default App;
