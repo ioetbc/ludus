@@ -107,7 +107,7 @@ class PayForm extends Component {
                     alt="close"
                 />
                 <div style={{ maxWidth: '440px' }}>
-                    <h3 style={{ marginTop: '0px' }}>Want to get started on a new project?</h3> 
+                    <h3 style={{ marginTop: '0px' }}><span style={{ fontWeight: 'bolder' }}>Want to get</span> started on a new project?</h3> 
                     <p>Get in touch</p>
                     <form onSubmit={(e) => {
                         e.preventDefault()

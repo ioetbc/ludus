@@ -7,14 +7,14 @@ class Navigation extends Component {
     constructor(props) {
         super(props);
 
-        this.state={ fadeDown: false, fadeUp: false };
+        this.state={ fadeDown: true, fadeUp: true };
     }
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({ fadeDown: true, fadeUp: true });
-        }, 1000);
-    }
+    // componentDidMount() {
+    //     setTimeout(() => {
+    //         this.setState({ fadeDown: true, fadeUp: true });
+    //     }, 1000);
+    // }
 
     render() {
         const { contactScreen, handleContact } = this.props;
