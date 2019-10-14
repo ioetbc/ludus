@@ -54,6 +54,11 @@ class PayForm extends Component {
     };
 
     handleSubmit() {
+        const inputs = [...document.getElementsByTagName('input')];
+        [...document.getElementsByTagName('textarea')][0].value = ''
+        inputs.map(i => i.value = '');
+
+        console.log('submit')
         axios({
             method: 'post',
             url: process.env.REACT_APP_CONTACT_ENDPOINT,
@@ -165,7 +170,7 @@ class PayForm extends Component {
                         </div>
                         <div className='text-field--container'>
                                 <div className='text-field large'>
-                                <textarea
+                                    <textarea
                                         className='text-field--input'
                                         name="message"
                                         id="message"

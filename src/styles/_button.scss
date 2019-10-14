@@ -25,6 +25,8 @@ button {
 
     &:disabled {
       background: black;
+      border: 1px solid black;
       cursor: no-drop;
+      color: white;
     }
 }

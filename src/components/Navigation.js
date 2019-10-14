@@ -12,19 +12,13 @@ class Navigation extends Component {
         this.state={ fadeDown: true, fadeUp: true };
     }
 
-    // componentDidMount() {
-    //     setTimeout(() => {
-    //         this.setState({ fadeDown: true, fadeUp: true });
-    //     }, 1000);
-    // }
-
     render() {
         const { contactScreen, handleContact } = this.props;
 
         return (
             <nav>
                 <div className="nav-desktop"
-                    style={{ right: contactScreen ? '50vw' : '0vw' }}
+                    style={{ right: contactScreen ? '50%' : '0%' }}
                 >
                     <div className={`nav-top ${this.state.fadeDown && 'fade-down'}`}>
                         <p style={{ fontWeight: 'bold' }}>Creatives that develop brands across design, animation and videography.</p>
@@ -32,7 +26,9 @@ class Navigation extends Component {
                     </div>
                     <div className={`nav-bottom ${this.state.fadeUp && 'fade-up'}`}>
                         <img style={{ width: '150px' }} src={LogoWhite} alt="ludus logo" />
+                        <a href="https://www.instagram.com/ludus_design/" target="_blank">
                         <p className="hover-animation" style={{ cursor: 'pointer', marginBottom: '20px', letterSpacing: '0.5' }}>Follow us on Instagram</p><img className="nav-instagram" src={Instagram} alt="instagram" />
+                        </a>
                     </div>
                 </div>
 
@@ -49,7 +45,9 @@ class Navigation extends Component {
 
                     <div className="social">
                         <img className="icon" src={Instagram} alt="instagram" />
-                        <p className="hover-animation">Follow us on Instagram</p>
+                        <a href="https://www.instagram.com/ludus_design/" target="_blank">
+                            <p className="hover-animation">Follow us on Instagram</p>
+                        </a>
                     </div>
                 </div>
             </nav>

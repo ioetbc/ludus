@@ -1,15 +1,30 @@
 .video {
-	video {
-		position: fixed;
-		width: 100%;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		@media screen and (min-width: 768px) {
-			right: 0;
+		iframe {
+			width: 100vw;
+			height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+			transition: all .5s ease;
+			position: absolute;
+			top: 0;
 			bottom: 0;
-			min-width: 100%;
-			min-height: 100%;
+			margin: auto;
+
+			@media screen and (min-width: 768px) { 
+				min-height: 100vh;
+				min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				margin: 0;
+			}
+		}
+
+	&.show-contact {
+		iframe {
+			left: -50%;
+			@media screen and (min-width: 768px) { 
+				left: 0%;
+			}
 		}
 	}
 }

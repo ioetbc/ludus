@@ -6,10 +6,9 @@ const Video = ({ contactScreen, handleContact }) => {
             onClick={!!contactScreen && handleContact}
             className={`video ${contactScreen && 'show-contact'}`}
         >
-            <video autoplay="true" loop>
-                <source src="https://firebasestorage.googleapis.com/v0/b/ludus-3ac39.appspot.com/o/ludus.mp4?alt=media&token=a0dc4f18-b0ad-4e43-8775-15097b61f8b8" type="video/webm" />
-            </video>
-
+            <iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0"
+                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+            </iframe>
         </main>
     )
 }
