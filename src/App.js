@@ -19,15 +19,18 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+			<div class="slice">
+				<div data-loader="rectangle"></div>
+			</div>
 				<Contact
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
 				/>
-
 				<Video
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
 				/>
+
 
 				<Navigation
 					handleContact={this.handleContact}
@@ -41,3 +44,5 @@ class App extends Component {
 
 
 export default App;
+
+
