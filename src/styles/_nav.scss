@@ -83,7 +83,8 @@ nav {
         top: 0;
         box-sizing: border-box;
         z-index: 0;
-        background: white;
+        background: black;
+        margin-top: 20px;
 
         .nav-menu {
             display: flex;
@@ -108,7 +109,8 @@ nav {
         }
 
         p {
-            font-size: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .social {

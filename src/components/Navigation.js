@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LogoBlack from '../images/logo/logo-black.svg';
 import LogoWhite from '../images/logo/logo-white.svg';
 
 import Menu from '../images/icon/mobile-menu.svg';
@@ -35,7 +34,7 @@ class Navigation extends Component {
 
                 <div className="nav-mobile">
                     <div className="nav-menu">
-                        <img style={{ width: '150px', height: '50px' }} src={LogoBlack} alt="ludus logo" />
+                        <img style={{ width: '150px', height: '50px' }} src={LogoWhite} alt="ludus logo" />
                         <img style={{ cursor: 'pointer', width: '30px', marginTop: '10px' }} src={Menu} onClick={handleContact} alt="menu"/>
                     </div>
                 </div>

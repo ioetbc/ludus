@@ -19,9 +19,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-			<div class="slice">
-				<div data-loader="rectangle"></div>
-			</div>
+				<div class="slice">
+					<div data-loader="rectangle"></div>
+				</div>
+
 				<Contact
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
@@ -30,7 +31,6 @@ class App extends Component {
 					handleContact={this.handleContact}
 					contactScreen={this.state.contactScreen}
 				/>
-
 
 				<Navigation
 					handleContact={this.handleContact}

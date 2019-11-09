@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "ludus-3ac39"
+    "default": "ludus-3ac39",
+    "ludus-production": "ludus-be69e"
   }
 }

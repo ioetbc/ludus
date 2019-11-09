@@ -17,18 +17,17 @@ const formSchema = Joi.object({
 });
 
 admin.initializeApp({
-    apiKey: functions.config().db.api_key,
-    authDomain: functions.config().db.auth_domain,
-    databaseURL: functions.config().db.url,
-    projectId: functions.config().db.project_id,
-    messagingSenderId: functions.config().db.message_sender_id,
-    appId: functions.config().db.app_id,
-    storageBucket: functions.config().db.storage_bucket,
+    apiKey: functions.config().fb.api_key,
+    authDomain: functions.config().fb.auth_domain,
+    databaseURL: functions.config().fb.url,
+    projectId: functions.config().fb.project_id,
+    messagingSenderId: functions.config().fb.message_sender_id,
+    appId: functions.config().fb.app_id,
+    storageBucket: functions.config().fb.storage_bucket,
 });
 
 exports.contact = functions.https.onRequest(async (req, res) => {
     cors(req, res, async () => {
-
         const validationError = formSchema.validate({
             firstName: req.body.firstName,
             businessName: req.body.businessName,
